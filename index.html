@@ -1,46 +1,71 @@
 <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Catherine Kim" />
+        <meta charset="utf-8" />
+        <title>Pixel present</title>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Prosto+One" rel="stylesheet">
+        <!-- Icon Fonts -->
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    </head>
+    <body>
 
-<head>
-    <title>Pixel Art Maker!</title>
-    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700|Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-</head>
+        <div class="row">
+        
+            <div class="left-col">
 
-<body>
-    <div class="app-title">
-        <h1>Pixel Art Maker</h1>
-    </div>
-    <aside>
-        <h2><span class="first_word">Step 1.</span> Choose Grid Size</h2>
-      <p class="size_info">Choose size value between 2 and 60</p>
-        <form id="sizePicker">
-            <div class="pick-size">
-                <label for="height">Height:</label>
-                <input type="number" id="input_height" name="height" min="2" max="60" value="10">
+                <h2 class="first-section-header">Customise Canvas</h2>
+                <form id="size_picker">
+                    <div class="label-2 smaller-font">Height</div>
+                    <input type="number" id="input_height" name="height" min="1" max="30" value="24">
+                    <div class="label-2 smaller-font">Width</div>
+                    <input type="number" id="input_width" name="width" min="1" max="30" value="24">
+                    <button type="submit" class="button-1 smaller-font" id="submit-btn">New Canvas</button>
+                </form>
+            
+                <div>
+                    <div class="button-2 smaller-font borderToggleBtn">Toggle Grid</div>
+                    <div class="button-2 smaller-font clearGrid">Save Canvas</div>
+                    <div class="button-4 addCol larger-font">+</div>
+                    <div class="label-2 smaller-font">Columns</div>
+                    <div class="button-4 removeCol larger-font">-</div>
+                    <div class="button-4 addRow larger-font">+</div>
+                    <div class="label-2 smaller-font">Rows</div>
+                    <div class="button-4 removeRow larger-font">-</div>
+                </div>
+
+                <div>
+                    <h2>Pick A Color</h2>
+                    <input type="color" id="color_picker" value="#147aad">
+                </div>
+
+                <div>
+                    <h2>Create Pixel Art</h2>
+                    <div class="button-3 tools draw active" title="Draw"><i class="ion-edit"></i></div>
+                    <div class="button-3 tools fill" title="Fill"><i class="ion-paintbucket"></i></div>
+                    <div class="button-3 tools erase" title="Erase"><i class="fa fa-eraser"></i></div>
+                    <!-- <div class="button-2 getColour" title="Get Colour"><i class="fa fa-eyedropper"></i></div> -->
+                </div>
+
+                
             </div>
-            <div class="pick-size">
-                <label for="width">Width:</label>
-                <input type="number" id="input_width" name="width" min="2" max="60" value="10">
+        
+            <div class="center-col">
+
+                <h1>Dr. John Doe</h1>
+                <table id="pixel_canvas"></table>
+
             </div>
-            <input type="submit" value="Build My Grid">
-        </form>
-
-        <h2><span class="first_word">Step 2.</span> Pick A Color</h2>
-        <input type="color" id="colorPicker">
-
-        <h2><span class="first_word">Step 3.</span><span class="arrow"> Design Canvas</span></h2>
-        <div class="addingColorInstruction">
-            <p><span class="first_word">Single click</span> to add color</p>
-            <p><span class="first_word">Click and move</span> to add color to multiple cells</p>
-            <p><span class="first_word">Double click</span> to remove color</p>
+        
+            <!-- this right hand column will be for colour palettes when getColour dropper feature is added -->
+            <div class="right-col"></div>
+            
         </div>
-    </aside>
-    <div class="centered">
-        <table id="pixel_canvas"></table>
-    </div>
-
-    <script src="designs.js"></script>
-</body>
-
+      
+        <!-- HTML2Canvas plugin used for saving canvas -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    </body>
 </html>
+
