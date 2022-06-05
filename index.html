@@ -1,9 +1,46 @@
-<!doctype html>
 <html>
-  <head>
-    <title>Title</title>
-  </head>
-  <body>
-    Hello World!
-  </body>
+
+<head>
+    <title>Pixel Art Maker!</title>
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="app-title">
+        <h1><span class="first_word">Agata&rsquo;s</span> Pixel Art Maker</h1>
+    </div>
+    <aside>
+        <h2><span class="first_word">Step 1.</span> Choose Grid Size</h2>
+      <p class="size_info">Choose size value between 2 and 60</p>
+        <form id="sizePicker">
+            <div class="pick-size">
+                <label for="height">Height:</label>
+                <input type="number" id="input_height" name="height" min="2" max="60" value="10">
+            </div>
+            <div class="pick-size">
+                <label for="width">Width:</label>
+                <input type="number" id="input_width" name="width" min="2" max="60" value="10">
+            </div>
+            <input type="submit" value="Build My Grid">
+        </form>
+
+        <h2><span class="first_word">Step 2.</span> Pick A Color</h2>
+        <input type="color" id="colorPicker">
+
+        <h2><span class="first_word">Step 3.</span><span class="arrow"> Design Canvas</span></h2>
+        <div class="addingColorInstruction">
+            <p><span class="first_word">Single click</span> to add color</p>
+            <p><span class="first_word">Click and move</span> to add color to multiple cells</p>
+            <p><span class="first_word">Double click</span> to remove color</p>
+        </div>
+    </aside>
+    <div class="centered">
+        <table id="pixel_canvas"></table>
+    </div>
+
+    <script src="designs.js"></script>
+</body>
+
 </html>
